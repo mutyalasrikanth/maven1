@@ -20,8 +20,8 @@ sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/targe
 	{
     sshagent(credentials: ['ubuntu'], ignoreMissing: true) {   
             sh 'echo "TEXT"' 
-	sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 3.16.67.66'	  
-	sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/target/webapp.war ubuntu@3.16.67.66:/var/lib/tomcat9/webapps/prodenv.war'
+	sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 10.2.0.44'	  
+	sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/target/webapp.war ubuntu@10.2.0.44:/var/lib/tomcat9/webapps/prodenv.war'
     }
     }
 }
