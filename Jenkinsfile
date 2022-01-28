@@ -19,7 +19,7 @@ sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/targe
     stage('Continuous Delivery') 
 	{
     sshagent(credentials: ['ubuntu'], ignoreMissing: true) {   
-            sh 'echo "TEXT2"' 
+            sh 'echo "TEXT"' 
 	sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 10.2.0.44'	  
 	sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/target/webapp.war ubuntu@10.2.0.44:/var/lib/tomcat9/webapps/prodenv.war'
     }
