@@ -18,6 +18,6 @@ sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/targe
 	}
     stage('Continuous Delivery') 
 	{
-sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/target/webapp.war   ubuntu@10.2.0.157:/var/lib/tomcat9/webapps/prodenv.war'
+sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/target/webapp.war   ubuntu@3.16.67.66:/var/lib/tomcat9/webapps/prodenv.war'
 	}
 }
