@@ -17,11 +17,8 @@ sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/targe
               sh label: '', script: 'echo "Testing Passed"'
 	}
     stage('Continuous Delivery') 
-	{
-    sshagent(credentials: ['ubuntu'], ignoreMissing: true) {   
-            sh 'echo "TEXT56"' 
-	sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 10.2.0.44'	  
-	sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/target/webapp.war ubuntu@10.2.0.44:/var/lib/tomcat9/webapps/prodenv.war'
+	{    
+	sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/Pipeline/webapp/target/webapp.war ubuntu@10.2.0.80:/var/lib/tomcat9/webapps/prodenv.war'
     }
     }
 }
